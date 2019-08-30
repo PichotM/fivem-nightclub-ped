@@ -409,7 +409,8 @@ local ipls = {
 	--"xs_arena_interior_mod",
 	--"xs_arena_interior"
 }
-local function timeCheck()
+
+local function BuildNightclub()
 	for k,v in pairs(toggleInt) do
 		SetInteriorActive(k, true)
 		for n,b in pairs(v) do
@@ -426,7 +427,7 @@ local function timeCheck()
 	end
 end
 
-Citizen.CreateThread(timeCheck)
+Citizen.CreateThread(BuildNightclub)
 
 local danceAnim = {
 	{
