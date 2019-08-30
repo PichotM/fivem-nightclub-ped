@@ -696,7 +696,7 @@ Citizen.CreateThread(function()
 
 			SetTextRenderId(GetDefaultScriptRendertargetRenderId())
 		elseif screen or screen2 then
-			ReleaseNamedRendertarget("Club_Projector")
+			Citizen.InvokeNative(0xE9F6FFE837354DD4, "Club_Projector")
 			ResetPedMovementClipset(GetPlayerPed(-1), 0.0)
 			screen = nil
 			screen2 = nil
