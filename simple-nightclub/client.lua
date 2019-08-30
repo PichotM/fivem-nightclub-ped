@@ -427,6 +427,21 @@ local function BuildNightclub()
 	end
 end
 
+local function CreateNamedRenderTargetForModel(name, model)
+	local handle = 0
+	if not IsNamedRendertargetRegistered(name) then
+		RegisterNamedRendertarget(name, 0)
+	end
+	if not IsNamedRendertargetLinked(model) then
+		LinkNamedRendertarget(model)
+	end
+	if IsNamedRendertargetRegistered(name) then
+		handle = GetNamedRendertargetRenderId(name)
+	end
+
+	return handle
+end
+
 Citizen.CreateThread(BuildNightclub)
 
 local danceAnim = {
